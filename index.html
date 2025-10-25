@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div id="app" style="height: 100vh">
+    </div>
+    <script type="module">
+      import Webamp from "https://unpkg.com/webamp@^2";
+      const webamp = new Webamp({
+        availableSkins: [
+          {
+            url: "https://archive.org/download/My-file_202510/Windows%20Xp.wsz",
+              name: "Windows XP",
+          },
+          {
+            url: "https://archive.org/cors/winampskin_Zelda_Amp/Zelda-Amp.wsz",
+            name: "Zelda Amp",
+          },
+          {
+            url: "https://archive.org/cors/winampskin_Green-Dimension-V2/Green-Dimension-V2.wsz",
+            name: "Green Dimension V2",
+          },
+          {
+            url: "https://archive.org/cors/winampskin_mac_os_x_1_5-aqua/mac_os_x_1_5-aqua.wsz",
+            name: "Mac OSX v1.5 (Aqua)",
+          },
+        ],
+        initialSkin: {
+          url: "https://archive.org/cors/winampskin_Zelda_Amp/Zelda-Amp.wsz",
+        },
+        initialTracks: [
+          {
+            metaData: {
+              artist: "DJ Mike Llama",
+              title: "Llama Whippin' Intro",
+            },
+            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+          },
+        ],
+      });
+
+      webamp.renderWhenReady(document.getElementById("app"));
+    </script>
+  </body>
+</html>
